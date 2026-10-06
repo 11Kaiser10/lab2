@@ -1,0 +1,25 @@
+@startuml LAB2
+left to right direction
+skinparam packageStyle rectangle
+actor "Клиент" as User
+actor "Курьер" as Kyrer
+actor "Ресторан" as Restoran
+package "Учёт доставки заказов" {
+    usecase "Просмотр статуса заказа" as Prosmotr
+    usecase "Оформление заявки на доставку заказа" as Zayvka
+    usecase "Доставка заказов" as Dostavka
+    usecase "Получение заказа из места выдачи" as Polychenie
+    usecase "Фиксация факта вручения заказа" as Vrychenie
+    usecase "Потвердить готовность заказа" as Gotovnost
+    usecase "Передать заказ курьеру" as Peredacha
+    usecase "Приготовление заказа" as Prigotovlenie
+}
+User --> Prosmotr
+User --> Zayvka
+Kyrer --> Dostavka
+Kyrer --> Polychenie
+Kyrer --> Vrychenie
+Restoran --> Gotovnost
+Restoran --> Peredacha
+Restoran --> Prigotovlenie
+@enduml
